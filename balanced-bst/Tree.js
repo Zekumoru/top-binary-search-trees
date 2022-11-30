@@ -12,7 +12,16 @@ module.exports = class Tree {
   }
 
   static buildTree(array) {
+    array = this.#removeDuplicate(array);
     return this.#buildTree(array, 0, array.length);
+  }
+
+  static #removeDuplicate(array) {
+    return array.filter((item, index, array) => {
+      if (index === 0) return true;
+      if (item === array[index - 1]) return false;
+      return true;
+    });
   }
 
   static #buildTree(array, start, end) {
