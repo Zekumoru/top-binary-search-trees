@@ -11,7 +11,10 @@ module.exports = class MergeSort {
     while (leftPointer < leftPart.length || rightPointer < rightPart.length) {
       const index = leftPointer + rightPointer;
 
-      if (leftPart[leftPointer] < rightPart[rightPointer] || rightPointer >= rightPart.length) {
+      if (
+        leftPart[leftPointer] < rightPart[rightPointer] ||
+        rightPointer >= rightPart.length
+      ) {
         array[index] = leftPart[leftPointer];
         leftPointer++;
       } else {
@@ -23,8 +26,3 @@ module.exports = class MergeSort {
     return array;
   }
 };
-
-/*
-2 4 3 1 5
-0 1 2 3 4
-*/
