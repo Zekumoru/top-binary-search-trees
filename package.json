@@ -1,0 +1,33 @@
+{
+  "name": "top-binary-search-trees",
+  "version": "1.0.0",
+  "description": "The seventh project of the JavaScript course from The Odin Project.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zekumoru/top-binary-search-trees.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zekumoru/top-binary-search-trees/issues"
+  },
+  "homepage": "https://github.com/Zekumoru/top-binary-search-trees#readme",
+  "devDependencies": {
+    "eslint": "^8.28.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.4",
+    "nodemon": "^2.0.20",
+    "prettier": "2.8.0"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
+}
