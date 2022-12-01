@@ -66,8 +66,8 @@ module.exports = class Tree {
         else if (toRemove.left != null && toRemove.right != null) {
           const next = this.#getNext(toRemove.right);
 
-          next.left = toRemove.left;
-          next.right = toRemove.right;
+          if (toRemove.left !== next) next.left = toRemove.left;
+          if (toRemove.right !== next) next.right = toRemove.right;
 
           if (child === node.left) node.left = next;
           else node.right = next;
