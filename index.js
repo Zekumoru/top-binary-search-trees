@@ -21,4 +21,17 @@ const prettyPrint = (node, prefix = '', isLeft = true) => {
 MergeSort.sort(array);
 
 const tree = new Tree(array);
+
+console.clear();
+console.log('Before remove');
+prettyPrint(tree.root);
+console.log();
+
+const value = 5;
+const node = tree.remove(value);
+console.log(`Removed ${value}`);
+prettyPrint(node);
+console.log();
+
+console.log('After remove');
 prettyPrint(tree.root);

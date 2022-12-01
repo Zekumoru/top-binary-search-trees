@@ -33,4 +33,41 @@ module.exports = class Tree {
 
     return new Node(array[middle], left, right);
   }
+
+  remove(value) {
+    return this.#remove(this.#root, value);
+  }
+
+  #remove(node, value) {
+    if (node == null) return null;
+    if (node.value === value) return node;
+
+    const left = this.#remove(node.left, value);
+    if (left != null) {
+      if (left === node.left) {
+        // First case: a leaf node
+        if (left.left == null && left.right == null) {
+          node.left = null;
+          return left;
+        }
+      }
+
+      return left;
+    }
+
+    const right = this.#remove(node.right, value);
+    if (right != null) {
+      // First case: a leaf node
+      if (right === node.right) {
+        if (right.left == null && right.right == null) {
+          node.right = null;
+          return right;
+        }
+      }
+
+      return right;
+    }
+
+    return null;
+  }
 };
