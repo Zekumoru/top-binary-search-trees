@@ -56,6 +56,8 @@ module.exports = class Tree {
         else if (node.left != null && node.right != null) {
           // third case
         }
+        else if (node.left != null) this.#root = node.left;
+        else this.#root = node.right;
         return node;
       }
 

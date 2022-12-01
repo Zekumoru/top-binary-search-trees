@@ -25,6 +25,7 @@ const prettyPrint = (node, prefix = '', isLeft = true) => {
 MergeSort.sort(array);
 
 const tree = new Tree([8]);
+tree.root.right = new Node(2, new Node(4), new Node(3));
 
 console.clear();
 console.log('Before remove');
