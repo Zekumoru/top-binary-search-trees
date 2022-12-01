@@ -1,5 +1,6 @@
 const MergeSort = require('./merge-sort/MergeSort');
 const Tree = require('./balanced-bst/Tree');
+const Node = require('./balanced-bst/Node');
 
 const array = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324, 2];
 
@@ -23,17 +24,18 @@ const prettyPrint = (node, prefix = '', isLeft = true) => {
 
 MergeSort.sort(array);
 
-const tree = new Tree(array);
+const tree = new Tree([8]);
 
 console.clear();
 console.log('Before remove');
 prettyPrint(tree.root);
 console.log();
 
-const value = 2;
+const value = 8;
 const node = tree.remove(value);
-console.log('Removed', { value: node?.value, left: node?.left?.value, right: node?.right?.value });
+console.log('Removed', { value: node?.value || null, left: node?.left?.value || null, right: node?.right?.value || null });
 console.log();
 
 console.log('After remove');
 prettyPrint(tree.root);
+console.log();

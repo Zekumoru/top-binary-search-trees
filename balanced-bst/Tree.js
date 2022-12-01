@@ -50,7 +50,17 @@ module.exports = class Tree {
 
   #remove(node, value) {
     if (node == null) return null;
-    if (node.value === value) return node;
+    if (node.value === value) {
+      if (node === this.#root) {
+        if (node.left == null && node.right == null) this.#root = null;
+        else if (node.left != null && node.right != null) {
+          // third case
+        }
+        return node;
+      }
+
+      return node;
+    }
 
     const toRemove = this.#remove(node.left, value) || this.#remove(node.right, value);
     const child = (toRemove === node.left) ? node.left : node.right;
