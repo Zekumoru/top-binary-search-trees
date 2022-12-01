@@ -10,6 +10,7 @@ const isSorted = (array) => array.reduce((sorted, current, index) => {
   return sorted;
 }, true);
 
+// eslint-disable-next-line no-unused-vars
 const prettyPrint = (node, prefix = '', isLeft = true) => {
   if (node === null) return;
   if (node.right !== null) {
@@ -22,19 +23,4 @@ const prettyPrint = (node, prefix = '', isLeft = true) => {
 };
 
 MergeSort.sort(array);
-
-const tree = new Tree(array);
-
-console.clear();
-console.log('Before remove');
-prettyPrint(tree.root);
-console.log();
-
-const value = 8;
-const node = tree.remove(value);
-console.log('Removed', { value: node?.value || null, left: node?.left?.value || null, right: node?.right?.value || null });
-console.log();
-
-console.log('After remove');
-prettyPrint(tree.root);
-console.log();
+new Tree();
