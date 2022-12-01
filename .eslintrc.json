@@ -22,6 +22,7 @@
     "max-len": "off",
     "no-continue": "off",
     "no-console": "off",
-    "operator-linebreak": "off"
+    "operator-linebreak": "off",
+    "brace-style": ["error", "stroustrup"]
   }
 }

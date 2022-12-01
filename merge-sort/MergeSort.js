@@ -17,7 +17,8 @@ module.exports = class MergeSort {
       ) {
         array[index] = leftPart[leftPointer];
         leftPointer++;
-      } else {
+      }
+      else {
         array[index] = rightPart[rightPointer];
         rightPointer++;
       }
