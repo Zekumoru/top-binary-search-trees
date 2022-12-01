@@ -26,15 +26,24 @@ MergeSort.sort(array);
 const tree = new Tree(array);
 
 console.clear();
-console.log('Before remove');
+console.log('Tree');
 prettyPrint(tree.root);
 console.log();
 
-const value = 7;
-const node = tree.remove(value);
-console.log(`Removed ${value}`);
-prettyPrint(node);
+const found = tree.find(67);
+console.log('Found');
+prettyPrint(found);
 console.log();
 
-console.log('After remove');
-prettyPrint(tree.root);
+// console.log('Before remove');
+// prettyPrint(tree.root);
+// console.log();
+
+// const value = 7;
+// const node = tree.remove(value);
+// console.log(`Removed ${value}`);
+// prettyPrint(node);
+// console.log();
+
+// console.log('After remove');
+// prettyPrint(tree.root);

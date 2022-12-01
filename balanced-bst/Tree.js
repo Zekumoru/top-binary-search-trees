@@ -34,6 +34,16 @@ module.exports = class Tree {
     return new Node(array[middle], left, right);
   }
 
+  find(value) {
+    return this.#find(this.#root, value);
+  }
+
+  #find(node, value) {
+    if (node == null) return null;
+    if (node.value === value) return node;
+    return this.#find(node.left, value) || this.#find(node.right, value);
+  }
+
   remove(value) {
     return this.#remove(this.#root, value);
   }
