@@ -3,7 +3,7 @@ const Node = require('./Node');
 module.exports = class Tree {
   #root;
 
-  constructor(array) {
+  constructor(array = []) {
     this.#root = Tree.buildTree(array);
   }
 
