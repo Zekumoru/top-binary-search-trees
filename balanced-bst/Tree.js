@@ -51,8 +51,18 @@ module.exports = class Tree {
         if (toRemove.left == null && toRemove.right == null) {
           if (child === node.left) node.left = null;
           else node.right = null;
-          return toRemove;
         }
+        // Third case: has both children
+        else if (toRemove.left != null && toRemove.right != null) {
+          // to do later!
+        }
+        // Second case: has one child
+        else if (toRemove.left != null) {
+          if (child === node.left) node.left = toRemove.left;
+          else node.right = toRemove.left;
+        }
+        else if (child === node.left) node.left = toRemove.right;
+        else node.right = toRemove.right;
       }
 
       return toRemove;
