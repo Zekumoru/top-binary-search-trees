@@ -52,13 +52,20 @@ module.exports = class Tree {
     if (node == null) return null;
     if (node.value === value) {
       if (node === this.#root) {
+        // First case: a leaf node
         if (node.left == null && node.right == null) this.#root = null;
+        // Third case: has both children
         else if (node.left != null && node.right != null) {
-          // third case
+          const next = this.#getNext(node.right);
+
+          if (node.left !== next) next.left = node.left;
+          if (node.right !== next) next.right = node.right;
+
+          this.#root = next;
         }
+        // Second case: has one child
         else if (node.left != null) this.#root = node.left;
         else this.#root = node.right;
-        return node;
       }
 
       return node;
