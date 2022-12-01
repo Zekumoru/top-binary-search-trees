@@ -1,5 +1,6 @@
 const MergeSort = require('./merge-sort/MergeSort');
 const Tree = require('./balanced-bst/Tree');
+const Node = require('./balanced-bst/Node');
 
 const array = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324, 2];
 
@@ -23,27 +24,22 @@ const prettyPrint = (node, prefix = '', isLeft = true) => {
 
 MergeSort.sort(array);
 
-const tree = new Tree(array);
+// for testing removing node with both children
+const tree = new Tree([50]);
+tree.root.left = new Node(30, new Node(20), new Node(40));
+tree.find(40).left = new Node(35, new Node(33, null, new Node(34)), new Node(36, null, new Node(38)));
 
 console.clear();
-console.log('Tree');
+console.log('Before remove');
 prettyPrint(tree.root);
 console.log();
 
-const found = tree.find(67);
-console.log('Found');
-prettyPrint(found);
-console.log();
-
-// console.log('Before remove');
-// prettyPrint(tree.root);
-// console.log();
-
-// const value = 7;
-// const node = tree.remove(value);
+const value = 30; // this is not removed yet, implement later
+const node = tree.remove(value);
+console.log('Removed', { value: node?.value, left: node?.left?.value, right: node?.right?.value });
 // console.log(`Removed ${value}`);
 // prettyPrint(node);
-// console.log();
+console.log();
 
-// console.log('After remove');
-// prettyPrint(tree.root);
+console.log('After remove');
+prettyPrint(tree.root); // 33, which is next of 30, should be gone

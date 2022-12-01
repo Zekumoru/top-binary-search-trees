@@ -64,7 +64,9 @@ module.exports = class Tree {
         }
         // Third case: has both children
         else if (toRemove.left != null && toRemove.right != null) {
-          // to do later!
+          const next = this.#getNext(toRemove.right);
+          console.log({ value: next.value, left: next.left?.value, right: next.right?.value });
+          console.log();
         }
         // Second case: has one child
         else if (toRemove.left != null) {
@@ -79,5 +81,14 @@ module.exports = class Tree {
     }
 
     return null;
+  }
+
+  #getNext(node) {
+    if (node.left != null) {
+      const next = this.#getNext(node.left);
+      if (next === node.left) node.left = next.right;
+      return next;
+    }
+    return node;
   }
 };
