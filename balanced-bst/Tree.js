@@ -42,30 +42,20 @@ module.exports = class Tree {
     if (node == null) return null;
     if (node.value === value) return node;
 
-    const left = this.#remove(node.left, value);
-    if (left != null) {
-      if (left === node.left) {
+    const toRemove = this.#remove(node.left, value) || this.#remove(node.right, value);
+    const child = (toRemove === node.left) ? node.left : node.right;
+
+    if (toRemove != null) {
+      if (toRemove === child) {
         // First case: a leaf node
-        if (left.left == null && left.right == null) {
-          node.left = null;
-          return left;
+        if (toRemove.left == null && toRemove.right == null) {
+          if (child === node.left) node.left = null;
+          else node.right = null;
+          return toRemove;
         }
       }
 
-      return left;
-    }
-
-    const right = this.#remove(node.right, value);
-    if (right != null) {
-      // First case: a leaf node
-      if (right === node.right) {
-        if (right.left == null && right.right == null) {
-          node.right = null;
-          return right;
-        }
-      }
-
-      return right;
+      return toRemove;
     }
 
     return null;
