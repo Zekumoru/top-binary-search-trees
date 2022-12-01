@@ -65,8 +65,12 @@ module.exports = class Tree {
         // Third case: has both children
         else if (toRemove.left != null && toRemove.right != null) {
           const next = this.#getNext(toRemove.right);
-          console.log({ value: next.value, left: next.left?.value, right: next.right?.value });
-          console.log();
+
+          next.left = toRemove.left;
+          next.right = toRemove.right;
+
+          if (child === node.left) node.left = next;
+          else node.right = next;
         }
         // Second case: has one child
         else if (toRemove.left != null) {

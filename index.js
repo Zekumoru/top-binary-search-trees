@@ -34,7 +34,7 @@ console.log('Before remove');
 prettyPrint(tree.root);
 console.log();
 
-const value = 30; // this is not removed yet, implement later
+const value = 30;
 const node = tree.remove(value);
 console.log('Removed', { value: node?.value, left: node?.left?.value, right: node?.right?.value });
 // console.log(`Removed ${value}`);
@@ -42,4 +42,4 @@ console.log('Removed', { value: node?.value, left: node?.left?.value, right: nod
 console.log();
 
 console.log('After remove');
-prettyPrint(tree.root); // 33, which is next of 30, should be gone
+prettyPrint(tree.root);
