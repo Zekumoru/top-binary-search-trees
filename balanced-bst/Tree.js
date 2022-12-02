@@ -155,4 +155,19 @@ module.exports = class Tree {
     list.prepend(node.value);
     return list;
   }
+
+  preOrder(fn) {
+    return this.#preOrder(this.#root, fn).toArray();
+  }
+
+  #preOrder(node, fn, list = new LinkedList()) {
+    if (node == null) return list;
+
+    if (typeof fn === 'function') fn(node.value);
+    list.append(node.value);
+    this.#preOrder(node.left, fn, list);
+    this.#preOrder(node.right, fn, list);
+
+    return list;
+  }
 };
