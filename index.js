@@ -25,11 +25,6 @@ const prettyPrint = (node, prefix = '', isLeft = true) => {
 MergeSort.sort(array);
 const tree = new Tree();
 
-console.clear();
-console.log('Before insert');
-prettyPrint(tree.root);
-console.log();
-
 tree.insert(4);
 tree.insert(1);
 tree.insert(5);
@@ -37,6 +32,9 @@ tree.insert(7);
 tree.insert(3);
 tree.insert(0);
 
-console.log('After insert');
+console.clear();
+console.log('Tree');
 prettyPrint(tree.root);
 console.log();
+
+console.log(tree.levelOrder());

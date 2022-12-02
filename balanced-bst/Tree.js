@@ -1,4 +1,6 @@
+const LinkedList = require('@zekumoru-dev/linked-list');
 const Node = require('./Node');
+const Queue = require('../queue/Queue');
 
 module.exports = class Tree {
   #root;
@@ -135,5 +137,22 @@ module.exports = class Tree {
       return next;
     }
     return node;
+  }
+
+  levelOrder(fn) {
+    return this.#levelOrder(this.#root, fn).toArray();
+  }
+
+  #levelOrder(node, fn, queue = new Queue()) {
+    if (node == null) return new LinkedList();
+
+    if (node.left != null) queue.enqueue(node.left);
+    if (node.right != null) queue.enqueue(node.right);
+
+    if (typeof fn === 'function') fn(node.value);
+
+    const list = this.#levelOrder(queue.dequeue(), fn, queue);
+    list.prepend(node.value);
+    return list;
   }
 };
