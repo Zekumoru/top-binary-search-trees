@@ -29,5 +29,8 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
+  },
+  "dependencies": {
+    "@zekumoru-dev/linked-list": "^1.0.1"
   }
 }
