@@ -170,4 +170,19 @@ module.exports = class Tree {
 
     return list;
   }
+
+  inOrder(fn) {
+    return this.#inOrder(this.#root, fn).toArray();
+  }
+
+  #inOrder(node, fn, list = new LinkedList()) {
+    if (node == null) return list;
+
+    this.#inOrder(node.left, fn, list);
+    if (typeof fn === 'function') fn(node.value);
+    list.append(node.value);
+    this.#inOrder(node.right, fn, list);
+
+    return list;
+  }
 };
