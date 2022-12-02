@@ -31,7 +31,7 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
-    "@zekumoru-dev/linked-list": "^1.0.1",
+    "@zekumoru-dev/linked-list": "^1.1.0",
     "@zekumoru-dev/merge-sort": "^1.0.0"
   }
 }
