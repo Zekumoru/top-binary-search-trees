@@ -40,4 +40,4 @@ console.log('Tree');
 prettyPrint(tree.root);
 console.log();
 
-console.log(tree.inOrder());
+console.log(tree.postOrder());

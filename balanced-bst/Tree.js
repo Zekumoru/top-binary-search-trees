@@ -185,4 +185,20 @@ module.exports = class Tree {
 
     return list;
   }
+
+  postOrder(fn) {
+    return this.#postOrder(this.#root, fn).toArray();
+  }
+
+  #postOrder(node, fn, list = new LinkedList()) {
+    if (node == null) return list;
+
+    this.#postOrder(node.left, fn, list);
+    this.#postOrder(node.right, fn, list);
+
+    if (typeof fn === 'function') fn(node.value);
+    list.append(node.value);
+
+    return list;
+  }
 };
