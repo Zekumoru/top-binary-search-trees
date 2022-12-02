@@ -1,4 +1,4 @@
-const MergeSort = require('./merge-sort/MergeSort');
+const MergeSort = require('@zekumoru-dev/merge-sort');
 const Tree = require('./balanced-bst/Tree');
 
 const array = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324, 2];
