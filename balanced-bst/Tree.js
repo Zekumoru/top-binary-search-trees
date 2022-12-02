@@ -44,6 +44,28 @@ module.exports = class Tree {
     return this.#find(node.left, value) || this.#find(node.right, value);
   }
 
+  insert(value) {
+    const inserted = this.#insert(this.#root, value);
+    if (this.#root == null) this.#root = inserted;
+    return inserted;
+  }
+
+  #insert(node, value) {
+    if (node == null) return new Node(value);
+
+    let inserted;
+    if (value < node.value) {
+      inserted = this.#insert(node.left, value);
+      if (node.left == null) node.left = inserted;
+    }
+    else {
+      inserted = this.#insert(node.right, value);
+      if (node.right == null) node.right = inserted;
+    }
+
+    return inserted;
+  }
+
   remove(value) {
     return this.#remove(this.#root, value);
   }
