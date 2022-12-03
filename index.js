@@ -40,4 +40,12 @@ console.log('Tree');
 prettyPrint(tree.root);
 console.log();
 
-console.log(`Balanced? ${tree.isBalanced()}`);
+console.log(`Is balanced? ${tree.isBalanced() ? 'Yes' : 'No'}.`);
+console.log();
+
+console.log('After balancing');
+prettyPrint(tree.rebalance());
+console.log();
+
+console.log(`Is balanced? ${tree.isBalanced() ? 'Yes' : 'No'}.`);
+console.log();

@@ -257,4 +257,9 @@ module.exports = class Tree {
     if (rh - lh > 1) return 0;
     return 1 + Math.max(lh, rh);
   }
+
+  rebalance() {
+    this.#root = Tree.buildTree(this.inOrder());
+    return this.#root;
+  }
 };
