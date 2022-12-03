@@ -9,7 +9,7 @@ The seventh project of the JavaScript course from The Odin Project.
 ### Constructor
 
 ```js
-Node((value = null), (left = null), (right = null));
+Node((value = null), (left = null), (right = null))
 ```
 
 Creates a tree node.
@@ -33,7 +33,7 @@ Returns the right node of the node.
 ### Constructor
 
 ```js
-Queue();
+Queue()
 ```
 
 Creates a queue.
@@ -49,7 +49,7 @@ Returns the size/length of the queue.
 #### enqueue
 
 ```js
-enqueue(value);
+enqueue(value)
 ```
 
 Enqueues the given `value` to the queue. Returns `undefined`.
@@ -57,7 +57,7 @@ Enqueues the given `value` to the queue. Returns `undefined`.
 #### dequeue
 
 ```js
-dequeue();
+dequeue()
 ```
 
 Returns the first enqueued value from the queue and removes it.
@@ -65,7 +65,7 @@ Returns the first enqueued value from the queue and removes it.
 #### peek
 
 ```js
-peek();
+peek()
 ```
 
 Returns the first enqueued value from the queue. It **does not** remove it from the queue.
@@ -75,7 +75,7 @@ Returns the first enqueued value from the queue. It **does not** remove it from 
 ### Constructor
 
 ```js
-Tree((array = []));
+Tree((array = []))
 ```
 
 Creates a balanced tree.
@@ -109,7 +109,7 @@ Returns the root node.
 #### find
 
 ```js
-find(value);
+find(value)
 ```
 
 Returns the node with the given `value`, otherwise `null`.
@@ -121,7 +121,7 @@ Returns the node with the given `value`, otherwise `null`.
 #### insert
 
 ```js
-insert(value);
+insert(value)
 ```
 
 Inserts a new node with the given `value` in the tree.
@@ -135,7 +135,7 @@ Returns the inserted node.
 #### remove
 
 ```js
-remove(value);
+remove(value)
 ```
 
 Removes the node with the given `value` from the tree.
@@ -149,7 +149,7 @@ Returns the removed node, otherwise `null`.
 #### levelOrder
 
 ```js
-levelOrder(fn);
+levelOrder(fn)
 ```
 
 Traverses the tree in level-order. Calls `fn` passing in the node value.
@@ -163,7 +163,7 @@ Returns an array of the tree's values in level-order.
 #### preOrder
 
 ```js
-preOrder(fn);
+preOrder(fn)
 ```
 
 Traverses the tree in pre-order. Calls `fn` passing in the node value.
@@ -177,7 +177,7 @@ Returns an array of the tree's values in pre-order.
 #### inOrder
 
 ```js
-inOrder(fn);
+inOrder(fn)
 ```
 
 Traverses the tree in in-order. Calls `fn` passing in the node value.
@@ -191,7 +191,7 @@ Returns an array of the tree's values in in-order.
 #### postOrder
 
 ```js
-postOrder(fn);
+postOrder(fn)
 ```
 
 Traverses the tree in post-order. Calls `fn` passing in the node value.
@@ -205,7 +205,7 @@ Returns an array of the tree's values in post-order.
 #### height
 
 ```js
-height(node);
+height(node)
 ```
 
 Returns the height of the given `node`, otherwise `-1`.
@@ -217,7 +217,7 @@ Returns the height of the given `node`, otherwise `-1`.
 #### depth
 
 ```js
-depth(node);
+depth(node)
 ```
 
 Returns the depth of the given `node`, otherwise `-1`.
@@ -231,7 +231,7 @@ Returns the height of the given `node`, otherwise `-1`.
 #### isBalanced
 
 ```js
-isBalanced();
+isBalanced()
 ```
 
 Returns `true` is the tree is balanced, otherwise `false`.
@@ -243,7 +243,7 @@ Returns `true` is the tree is balanced, otherwise `false`.
 #### rebalance
 
 ```js
-rebalance();
+rebalance()
 ```
 
 Re-balances the tree. Returns the root node.

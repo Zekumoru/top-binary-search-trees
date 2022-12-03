@@ -1,3 +1,6 @@
+# Ignores
+README.md
+
 # Ignore JS files for Eslint to format
 *.js
 
