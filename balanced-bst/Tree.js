@@ -201,4 +201,26 @@ module.exports = class Tree {
 
     return list;
   }
+
+  height(node) {
+    return this.#height(this.#root, node);
+  }
+
+  #height(node, target, found = false) {
+    if (node == null) {
+      if (found) return 0;
+      return -1;
+    }
+
+    if (node === target) found = true;
+
+    const lh = this.#height(node.left, target, found);
+    const rh = this.#height(node.right, target, found);
+    const height = Math.max(lh, rh);
+
+    if (found && node !== target) return height + 1;
+    if (height >= 0) return height;
+
+    return -1;
+  }
 };
