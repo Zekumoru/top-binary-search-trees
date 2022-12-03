@@ -10,7 +10,7 @@ module.exports = class Tree {
   }
 
   get root() {
-    return this.#root;
+    return Object.freeze(this.#root);
   }
 
   static buildTree(array) {
