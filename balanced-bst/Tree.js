@@ -223,4 +223,21 @@ module.exports = class Tree {
 
     return -1;
   }
+
+  depth(node) {
+    return this.#depth(this.#root, node);
+  }
+
+  #depth(node, target) {
+    if (node == null) return -1;
+    if (node === target) return 0;
+
+    const lh = this.#depth(node.left, target);
+    if (lh >= 0) return lh + 1;
+
+    const rh = this.#depth(node.right, target);
+    if (rh >= 0) return rh + 1;
+
+    return -1;
+  }
 };

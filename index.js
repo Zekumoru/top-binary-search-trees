@@ -40,5 +40,5 @@ console.log('Tree');
 prettyPrint(tree.root);
 console.log();
 
-const target = tree.find(70);
-console.log(tree.height(target));
+const target = tree.find(40);
+console.log(tree.depth(target));
