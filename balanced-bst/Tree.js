@@ -240,4 +240,21 @@ module.exports = class Tree {
 
     return -1;
   }
+
+  isBalanced() {
+    return this.#isBalanced(this.#root) > 0;
+  }
+
+  #isBalanced(node) {
+    if (node == null) return 1;
+
+    const lh = this.#isBalanced(node.left);
+    if (lh === 0) return 0;
+
+    const rh = this.#isBalanced(node.right);
+    if (rh === 0) return 0;
+
+    if (rh - lh > 1) return 0;
+    return 1 + Math.max(lh, rh);
+  }
 };
