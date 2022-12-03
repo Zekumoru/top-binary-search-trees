@@ -157,49 +157,49 @@ module.exports = class Tree {
   }
 
   preOrder(fn) {
-    return this.#preOrder(this.#root, fn).toArray();
+    return this.#preOrder(this.#root, fn);
   }
 
-  #preOrder(node, fn, list = new LinkedList()) {
-    if (node == null) return list;
+  #preOrder(node, fn, array = []) {
+    if (node == null) return array;
 
     if (typeof fn === 'function') fn(node.value);
-    list.append(node.value);
-    this.#preOrder(node.left, fn, list);
-    this.#preOrder(node.right, fn, list);
+    array.push(node.value);
+    this.#preOrder(node.left, fn, array);
+    this.#preOrder(node.right, fn, array);
 
-    return list;
+    return array;
   }
 
   inOrder(fn) {
-    return this.#inOrder(this.#root, fn).toArray();
+    return this.#inOrder(this.#root, fn);
   }
 
-  #inOrder(node, fn, list = new LinkedList()) {
-    if (node == null) return list;
+  #inOrder(node, fn, array = []) {
+    if (node == null) return array;
 
-    this.#inOrder(node.left, fn, list);
+    this.#inOrder(node.left, fn, array);
     if (typeof fn === 'function') fn(node.value);
-    list.append(node.value);
-    this.#inOrder(node.right, fn, list);
+    array.push(node.value);
+    this.#inOrder(node.right, fn, array);
 
-    return list;
+    return array;
   }
 
   postOrder(fn) {
-    return this.#postOrder(this.#root, fn).toArray();
+    return this.#postOrder(this.#root, fn);
   }
 
-  #postOrder(node, fn, list = new LinkedList()) {
-    if (node == null) return list;
+  #postOrder(node, fn, array = []) {
+    if (node == null) return array;
 
-    this.#postOrder(node.left, fn, list);
-    this.#postOrder(node.right, fn, list);
+    this.#postOrder(node.left, fn, array);
+    this.#postOrder(node.right, fn, array);
 
     if (typeof fn === 'function') fn(node.value);
-    list.append(node.value);
+    array.push(node.value);
 
-    return list;
+    return array;
   }
 
   height(node) {
